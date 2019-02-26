@@ -1,0 +1,33 @@
+﻿@using MvcReproductor.Models;
+@model  Antiextorsion
+@{
+                /**/
+
+                ViewBag.Title = "MediaPlayerVideo";
+}
+
+<h2>View</h2>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MediaPlayerVideo</title>
+</head>
+<body>
+    @Model.Ruta
+    <div id="fullscreen-bg">
+        <video id="bg-video" autoplay poster="images/home-video-poster.jpg" loop>
+            <source src="@Model.Ruta" type="video/mp4" />
+            <source src="@Model.Ruta" type="video/amr" />
+            <object type="application/x-shockwave-flash" data="videos/flashfox.swf" width="1280" height="720" style="position:relative;">
+                <param name="movie" value="videos/flashfox.swf" />
+                <param name="allowFullScreen" value="true" />
+                <param name="flashVars" value="autoplay=true&amp;controls=true&amp;fullScreenEnabled=true&amp;posterOnEnd=true&amp;loop=true&amp;poster=images/home-video-poster.jpg&amp;src=videos/home-intro.m4v" />
+                <embed src="videos/flashfox.swf" width="1280" height="720" style="position:relative;" flashVars="autoplay=true&amp;controls=true&amp;fullScreenEnabled=true&amp;posterOnEnd=true&amp;loop=true&amp;poster=images/home-video-poster.jpg&amp;src=videos/home-intro.m4v" allowFullScreen="true" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_en" />
+                <img alt="Video playback is not supported by your browser" src="images/home-video-poster.jpg" style="position:absolute;left:0px;width:100%;" title="Video playback is not supported by your browser" />
+            </object>
+        </video>
+    </div>
+</body>
+</html>
